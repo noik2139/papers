@@ -160,7 +160,7 @@ def set_up():
     title = input("Title: ")
     file_name = os.getcwd() + '\\' + folder + '\\' + title + '.tex'
     text = main_text(folder, title, day, semester)
-    file = open(file_name,"w")
+    file = open(file_name,"w", encoding='utf8')
     file.write(text)
     file.close()
 
