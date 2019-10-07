@@ -9,7 +9,6 @@ def main_text(CLASS = "", TITLE = "", DATE = "",SEMESTER = "Önn Nr. 3"):
         
         
         main = file.read().format(TITLE,DATE,CLASS,SEMESTER)
-        main.replace('\\', '\\\\')
         main.replace('{{','{{{{')
         main.replace('}}','}}}}')
 
