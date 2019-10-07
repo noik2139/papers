@@ -96,6 +96,3 @@ def set_up():
 
 set_up()
 
-os.system("git add .")
-os.system('git commit -m "auto update"')
-os.system('git push')
