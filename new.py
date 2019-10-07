@@ -30,10 +30,8 @@ def this_day():
     return time_str
 
 def print_green(text):
-    print("\033[1;30;42m{}".format(text))
+    print("\x1b[1;30;42m{}\033[0;37;40m".format(text))
 
-def print_n(text):
-    print("\033[0;37;40m{}".format(text))
 
 
 def select_folder():
@@ -45,24 +43,25 @@ def select_folder():
     green = length - select
     key = ''
     while key != b'\r':
-        print("select class")
+        
         green = length - select-1
         os.system("cls")
-        print_n('["w"- upp/ "s"- down]')
+        print("select class")
+        print('["w"- upp/ "s"- down]')
         for file_name in ls:
             index = ls.index(file_name)
             if index == green:
                 print_green(file_name)
             else:
-                print_n(file_name)
+                print(file_name)
 
         #til að búa til nýja skrá
         if green == length:
                 print_green("Make new file")
         else:
-            print_n("Make new file")
+            print("Make new file")
 
-        print_n('')
+        print('')
         key = getch()
 
         if key == b'w' and green > 0:
